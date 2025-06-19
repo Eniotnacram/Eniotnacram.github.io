@@ -33,13 +33,20 @@
             margin: 0 20px;
             font-weight: bold;
             transition: color 0.3s;
+            cursor: pointer;
         }
         nav a:hover {
             color: #28a745;
         }
+        .tab-content {
+            display: none;
+            padding: 40px 20px;
+        }
+        .active {
+            display: block;
+        }
         .hero {
             text-align: center;
-            padding: 40px 20px;
             background-color: white;
         }
         .hero h1 {
@@ -55,7 +62,6 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
-            padding: 40px 20px;
         }
         .card {
             background-color: white;
@@ -92,17 +98,6 @@
             padding: 20px;
             margin-top: 40px;
         }
-        #contact {
-            background-color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        #contact h2 {
-            margin-bottom: 10px;
-        }
-        #contact p {
-            color: #555;
-        }
     </style>
 </head>
 <body>
@@ -112,36 +107,50 @@
     </header>
 
     <nav>
-        <a href="#home">Home</a>
-        <a href="#assets">Assets</a>
-        <a href="#contact">Contact</a>
+        <a onclick="showTab('home')">Home</a>
+        <a onclick="showTab('assets')">Assets</a>
+        <a onclick="showTab('contact')">Contact</a>
     </nav>
 
-    <section class="hero" id="home">
-        <h1>Welcome to Influency's Studio</h1>
-        <p>I’m currently developing my own game and creating powerful, easy-to-use assets for game developers. Whether you're an indie dev or part of a team, you'll find tools here that can supercharge your workflow and creativity.</p>
+    <section id="home" class="tab-content active">
+        <div class="hero">
+            <h1>Welcome to Influency's Studio</h1>
+            <p>I’m currently developing my own game and creating powerful, easy-to-use assets for game developers. Whether you're an indie dev or part of a team, you'll find tools here that can supercharge your workflow and creativity.</p>
+        </div>
     </section>
 
-    <section class="gallery" id="assets">
-        <!-- Custom Quest Tasks Card -->
-        <div class="card">
-            <img src="CUSTOM_QUEST_TASKS_x420.png" alt="Custom Quest Tasks">
-            <div class="card-content">
-                <h2 class="card-title">Custom Quest Tasks</h2>
-                <p class="card-description">Addon for MMORPG Kit that allows developers to create new, customized quest objectives and mechanics quickly and easily.</p>
+    <section id="assets" class="tab-content">
+        <div class="gallery">
+            <!-- Custom Quest Tasks Card -->
+            <div class="card">
+                <img src="custom-quest-tasks-x420.png" alt="Custom Quest Tasks">
+                <div class="card-content">
+                    <h2 class="card-title">Custom Quest Tasks</h2>
+                    <p class="card-description">Addon for MMORPG Kit that allows developers to create new, customized quest objectives and mechanics quickly and easily.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>If you're interested in collaborating, purchasing an asset, or just have a question, feel free to reach out:</p>
-        <p><strong>Email:</strong> <a href="mailto:influency.studio@gmail.com">influency.studio@gmail.com</a></p>
+    <section id="contact" class="tab-content">
+        <div style="text-align:center;">
+            <h2>Contact</h2>
+            <p>If you're interested in collaborating, purchasing an asset, or just have a question, feel free to reach out:</p>
+            <p><strong>Email:</strong> <a href="mailto:influency.studio@gmail.com">influency.studio@gmail.com</a></p>
+        </div>
     </section>
 
     <footer>
         &copy; 2024 Influency's Studio - All rights reserved
     </footer>
+
+    <script>
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+        }
+    </script>
 
 </body>
 </html>
