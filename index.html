@@ -32,11 +32,13 @@
             text-decoration: none;
             margin: 0 20px;
             font-weight: bold;
-            transition: color 0.3s;
+            transition: color 0.3s, border-bottom 0.3s;
             cursor: pointer;
+            padding-bottom: 5px;
         }
-        nav a:hover {
+        nav a.active-tab {
             color: #28a745;
+            border-bottom: 2px solid #28a745;
         }
         .tab-content {
             display: none;
@@ -107,9 +109,9 @@
     </header>
 
     <nav>
-        <a onclick="showTab('home')">Home</a>
-        <a onclick="showTab('assets')">Assets</a>
-        <a onclick="showTab('contact')">Contact</a>
+        <a class="active-tab" onclick="showTab('home', this)">Home</a>
+        <a onclick="showTab('assets', this)">Assets</a>
+        <a onclick="showTab('contact', this)">Contact</a>
     </nav>
 
     <section id="home" class="tab-content active">
@@ -145,10 +147,14 @@
     </footer>
 
     <script>
-        function showTab(tabId) {
+        function showTab(tabId, element) {
             const tabs = document.querySelectorAll('.tab-content');
             tabs.forEach(tab => tab.classList.remove('active'));
             document.getElementById(tabId).classList.add('active');
+
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => link.classList.remove('active-tab'));
+            element.classList.add('active-tab');
         }
     </script>
 
