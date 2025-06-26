@@ -1,0 +1,35 @@
+
+<h2>📘 <strong>UI Tooltips System - Documentation</strong></h2>
+
+<p><strong>Overview:</strong><br>
+This addon introduces a flexible and modular tooltip display system for <strong>MultiplayerARPG</strong>. Designed for use with UI elements such as buttons or icons, it lets you show dynamic in-game information using <strong>ScriptableObjects</strong> and popup dialogs.</p>
+
+<p><strong>Key Features:</strong></p>
+<ul>
+  <li>Uses ScriptableObject-based <strong>Tooltip</strong> assets to store title, description, and icon.</li>
+  <li>Centralized registration via <code>GameDatabase</code> and <code>GameInstance</code>.</li>
+  <li>Drag-and-drop tooltip assignment via the Unity Inspector.</li>
+  <li>Fully customizable popup dialog UI via <strong>UITooltipDialog</strong>.</li>
+  <li>Simple click-to-show behavior using the <strong>UITooltipTrigger</strong> component.</li>
+</ul>
+
+<p><strong>How to Set Up:</strong></p>
+<ol>
+  <li>Create a new Tooltip asset: <strong>Create &gt; GameData &gt; Tooltip</strong>.</li>
+  <li>Fill in the tooltip’s title, description, and optional icon.</li>
+  <li>Attach <code>UITooltipTrigger</code> to a UI Button or Image.</li>
+  <li>Drag your Tooltip asset to the <strong>tooltip</strong> field in the component.</li>
+  <li>Ensure your scene contains a <code>BaseUISceneGameplay</code> instance with the <code>uiTooltipDialog</code> field assigned.</li>
+</ol>
+
+<p><strong>Advanced Integration:</strong></p>
+<ul>
+  <li>Tooltips are registered automatically via the game’s database loading pipeline.</li>
+  <li>Dialogs are populated using the <code>Setup()</code> method in <code>UITooltipDialog</code>, which you can override or extend for your UI style.</li>
+</ul>
+
+<p><strong>Dependencies:</strong><br>
+This system assumes you are using the <strong>BaseUISceneGameplay</strong> pattern provided by the MMORPG Kit. You can extend the singleton reference if needed to suit custom scenes.</p>
+
+<p><strong>License & Usage:</strong><br>
+You may use this addon in commercial projects. Redistribution of the addon by itself is not allowed.</p>
