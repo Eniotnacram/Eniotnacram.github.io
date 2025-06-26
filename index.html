@@ -6,72 +6,61 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Influency's Studio</title>
 <style>
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  justify-items: center;
-  padding: 20px;
-}
-
-.card {
-  background-color: white;
-  width: 100%;
-  max-width: 250px;
-  min-height: 420px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.2s;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.card:hover { transform: scale(1.05); }
-
-.card img {
-  width: 100%;
-  height: auto;
-}
-
-.card-content {
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.card-title {
-  font-size: 1.2em;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.card-description {
-  font-size: 0.9em;
-  color: #555;
-  margin-bottom: auto;
-}
-
-.doc-button {
-  margin-top: 15px;
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: #28a745;
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.doc-button:hover {
-  background-color: #218838;
-}
-
+    * { box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #222;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #444;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      cursor: pointer;
+      padding-bottom: 5px;
+    }
+    nav a.active-tab {
+      color: #28a745;
+      border-bottom: 2px solid #28a745;
+    }
+    .tab-content {
+      display: none;
+      padding: 40px 20px;
+    }
+    .active {
+      display: block;
+    }
+    .hero {
+      text-align: center;
+      background-color: white;
+    }
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
       background-color: rgba(0,0,0,0.7);
       overflow-y: auto;
     }
@@ -91,7 +80,74 @@
       color: #333;
       cursor: pointer;
     }
-  </style>
+  
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  padding: 20px;
+}
+
+.card {
+  background-color: white;
+  width: 100%;
+  max-width: 250px;
+  height: 460px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.card-title {
+  font-size: 1.1em;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.card-description {
+  font-size: 0.85em;
+  color: #555;
+  flex-grow: 1;
+}
+
+.doc-button {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.doc-button:hover {
+  background-color: #218838;
+}
+</style>
 </head>
 <body>
 <header>
@@ -116,14 +172,6 @@
 <h2 class="card-title">Custom Quest Tasks</h2>
 <p class="card-description">Addon for MMORPG Kit that allows developers to create new, customized quest objectives and mechanics quickly and easily.</p>
 <button class="doc-button" onclick="loadDoc('docs/custom-quest-tasks-doc.html')">📘 Documentation</button>
-<div class="card">
-<img alt="UI Tooltips System" src="images/ui-tooltips-system-x420.png"/>
-<div class="card-content">
-<h2 class="card-title">UI Tooltips System</h2>
-<p class="card-description">A clean and extensible system to show in-game tooltips using UI buttons, ScriptableObjects, and custom popup dialogs.</p>
-<button class="doc-button" onclick="loadDoc('docs/ui-tooltips-system-doc.html')">📘 Documentation</button>
-</div>
-</div>
 </div>
 </div>
 <div class="card">
@@ -140,6 +188,14 @@
 <h2 class="card-title">LanguageManagerSearchTool</h2>
 <p class="card-description">A powerful in-editor search and management tool for multilingual content in the MMORPG Kit. Streamline localization and manage language entries with ease.</p>
 <button class="doc-button" onclick="loadDoc('docs/language-manager-search-tool-doc.html')">📘 Documentation</button>
+</div>
+</div>
+<div class="card">
+<img alt="UI Tooltips System" src="images/ui-tooltips-system-x420.png"/>
+<div class="card-content">
+<h2 class="card-title">UI Tooltips System</h2>
+<p class="card-description">A clean and extensible system to show in-game tooltips using UI buttons, ScriptableObjects, and custom popup dialogs.</p>
+<button class="doc-button" onclick="loadDoc('docs/ui-tooltips-system-doc.html')">📘 Documentation</button>
 </div>
 </div>
 </div>
