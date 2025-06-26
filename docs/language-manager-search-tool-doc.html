@@ -1,0 +1,76 @@
+<!-- ADD THIS INSIDE THE .gallery DIV IN THE #assets SECTION -->
+<div class="card">
+  <img src="images/language-manager-search-tool-x420.png" alt="Language Manager Search Tool">
+  <div class="card-content">
+    <h2 class="card-title">LanguageManagerSearchTool</h2>
+    <p class="card-description">A powerful in-editor search and management tool for multilingual content in the MMORPG Kit. Streamline localization and manage language entries with ease.</p>
+    <button class="doc-button" onclick="loadDoc('docs/language-manager-search-tool-doc.html')">📘 Documentation</button>
+  </div>
+</div>
+
+<!-- SAVE THIS AS docs/language-manager-search-tool-doc.html -->
+<h2>📘 <strong>LanguageManagerSearchTool - Documentation</strong></h2>
+
+<p><strong>Overview:</strong> The <strong>LanguageManagerSearchTool</strong> is a Unity Editor extension designed specifically for the <strong>MMORPG KIT</strong>. It allows developers to view, search, edit, add, and validate translation keys across multiple languages directly within the Unity Editor.</p>
+
+<p><strong>Features:</strong></p>
+<ul>
+  <li>🔍 Real-time search and inline editing of keys and values per language</li>
+  <li>➕ Add new keys across all defined languages</li>
+  <li>🚫 Detect duplicate keys</li>
+  <li>❗ Detect missing keys in specific languages</li>
+  <li>🔒 Lock editing to avoid accidental changes</li>
+  <li>💾 Save changes back to the prefab or scene instance</li>
+</ul>
+
+<p><strong>How to Open:</strong></p>
+<ol>
+  <li>In the Unity menu bar, go to <strong>MMORPG KIT</strong> &gt; <strong>Language Manager Search</strong></li>
+  <li>The tool will open in a new Editor window</li>
+  <li>You can dock it like any other Unity Editor panel (e.g., next to the Inspector or Console)</li>
+</ol>
+
+<p><strong>Setup:</strong></p>
+<ol>
+  <li>Drag your <strong>LanguageManager</strong> component into the field at the top of the tool</li>
+  <li>This can be a prefab (from the Project folder) or a scene object</li>
+  <li>Once loaded, the tool will analyze all available languages and their keys</li>
+</ol>
+
+<p><strong>Search & Edit:</strong></p>
+<ul>
+  <li>Enter a search term to find matching keys</li>
+  <li>Results will show language key, the key name, and its value</li>
+  <li>You can edit key names and values directly in the list</li>
+  <li>Select and delete keys individually</li>
+</ul>
+
+<p><strong>Add Keys:</strong></p>
+<ol>
+  <li>Click on the <strong>Add Keys</strong> tab</li>
+  <li>Type a new key name</li>
+  <li>Enter a value for each language</li>
+  <li>Click <strong>Add Keys</strong> to insert them into all languages (skips duplicates)</li>
+  <li>The tool will automatically save if working with a prefab</li>
+</ol>
+
+<p><strong>Validation Tabs:</strong></p>
+<ul>
+  <li><strong>Duplicate Keys:</strong> shows keys that exist more than once in a language</li>
+  <li><strong>Missing Keys:</strong> shows which languages are missing keys found in others</li>
+</ul>
+
+<p><strong>Save & Refresh:</strong></p>
+<ul>
+  <li><strong>Save Changes:</strong> saves data to the prefab (or marks scene dirty if not prefab)</li>
+  <li><strong>Refresh:</strong> reloads the LanguageManager and rebuilds all cached data (Search, Add, Missing, Duplicates)</li>
+</ul>
+
+<p><strong>Best Practices:</strong></p>
+<ul>
+  <li>Use <strong>Refresh</strong> if you edit the LanguageManager manually outside the tool</li>
+  <li>Use the <strong>Lock</strong> button to prevent accidental editing when browsing</li>
+  <li>Back up your prefab before performing bulk changes</li>
+</ul>
+
+<p><strong>License & Usage:</strong><br>You may use this addon in commercial projects. Redistribution of the addon by itself is not allowed.</p>
