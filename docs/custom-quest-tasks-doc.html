@@ -1,36 +1,36 @@
 <h2>📘 Custom Quest Tasks - Documentation</h2>
-<p><strong>Overview:</strong> This addon enhances the MMORPG KIT with new quest mechanics that are customizable using ScriptableObjects.</p>
+<p><strong>Overview:</strong> This addon enhances the MMORPG KIT with new quest mechanics that are customizable using <strong>ScriptableObjects</strong>.</p>
 
 <p><strong>Available Quest Tasks:</strong></p>
-<ul>
-  <li><strong>KillMonsterTask:</strong> Tracks all or specific monster kills.</li>
-  <li><strong>GetCurrencyTask:</strong> Tracks currency gained after accepting the quest. Ignores pre-owned currency.</li>
-  <li><strong>GetCharacterLevelTask:</strong> Requires reaching a specific character level.</li>
-  <li><strong>GetCharacterSkillLevelTask:</strong> Requires minimum skill levels. Can be set to require all skills or any.</li>
-  <li><strong>GetCharacterCompletedQuestTask:</strong> Requires completion of a specific quest.</li>
-  <li><strong>GetCharacterAttributesTask:</strong> Tracks total attribute points spent. You can define which attributes are tracked.</li>
-</ul>
+<p><strong>KillMonsterTask:</strong> Tracks all or specific monster kills.</p>
+<p><strong>GetCurrencyTask:</strong> Tracks currency gained after accepting the quest. Ignores pre-owned currency.</p>
+<p><strong>GetCharacterLevelTask:</strong> Requires reaching a specific character level.</p>
+<p><strong>GetCharacterSkillLevelTask:</strong> Requires minimum skill levels. Can be set to require all skills or any.</p>
+<p><strong>GetCharacterCompletedQuestTask:</strong> Requires completion of a specific quest.</p>
+<p><strong>GetCharacterAttributesTask:</strong> Tracks total attribute points spent. You can define which attributes are tracked.</p>
 
 <p><strong>How to Create a Custom Task:</strong></p>
 <ol>
-  <li>In Unity, go to <code>Create > GameData > Tasks > Custom Quest Task</code></li>
-  <li>Select the task type (e.g., KillMonsterTask)</li>
+  <li>In Unity, go to <strong>Create > GameData > Tasks > Custom Quest Task</strong></li>
+  <li>Select the task type (e.g., <strong>KillMonsterTask</strong>)</li>
   <li>Configure its fields and set the description</li>
-  <li>Add it to a Quest under the <code>custom quest task</code> list</li>
+  <li>Add it to a Quest under the <strong>custom quest task</strong> list</li>
 </ol>
 
-<p><strong>Important:</strong> Task descriptions should not be placed in the Quest ScriptableObject. Instead, use the Custom Quest Task ScriptableObject for all logic and values.</p>
+<p><strong>Important:</strong> Task descriptions should not be placed in the Quest ScriptableObject. Instead, use the <strong>Custom Quest Task ScriptableObject</strong> for all logic and values.</p>
 
 <p><strong>Editor Integration:</strong></p>
 <ul>
   <li>Tasks display editor fields through custom editors.</li>
-  <li>The <code>Header</code> string in <code>BaseCustomQuestTask_QuestExtensions</code> must match the task type name exactly.</li>
+  <li>The <strong>Header</strong> string in <strong>BaseCustomQuestTask_QuestExtensions</strong> must match the task type name exactly.</li>
 </ul>
 
 <p><strong>Required Overrides in PlayerCharacterEntity:</strong></p>
 <ul>
-  <li><code>OnKillMonster</code></li>
-  <li><code>OnRewardCurrency</code></li>
+  <li><strong>OnKillMonster</strong></li>
+  <li><strong>OnRewardCurrency</strong></li>
 </ul>
+<p>These are not core modifications. If your project has not already overridden these methods, the system will work as-is.</p>
+<p>However, if your project <strong>already overrides</strong> these functions, you will get conflicts (compile errors), as you cannot override the same function in two different partials of <strong>PlayerCharacterEntity</strong>. In that case, you must manually copy the logic from this addon into your own overridden methods to merge them properly.</p>
 
 <p><strong>License & Usage:</strong> You can use this addon in commercial projects. Redistribution of the addon alone is not allowed.</p>
