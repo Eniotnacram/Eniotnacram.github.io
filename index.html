@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Influency's Studio</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Influency's Studio</title>
+<style>
     * { box-sizing: border-box; }
     body {
       font-family: Arial, sans-serif;
@@ -46,12 +47,6 @@
     .hero {
       text-align: center;
       background-color: white;
-    }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
     }
     .card {
       background-color: white;
@@ -126,87 +121,84 @@
       color: #333;
       cursor: pointer;
     }
-  </style>
+  
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+</style>
 </head>
 <body>
-
 <header>
-  <h1>Influency's Studio</h1>
+<h1>Influency's Studio</h1>
 </header>
-
 <nav>
-  <a class="active-tab" onclick="showTab('home', this)">Home</a>
-  <a onclick="showTab('assets', this)">Assets</a>
-  <a onclick="showTab('contact', this)">Contact</a>
+<a class="active-tab" onclick="showTab('home', this)">Home</a>
+<a onclick="showTab('assets', this)">Assets</a>
+<a onclick="showTab('contact', this)">Contact</a>
 </nav>
-
-<section id="home" class="tab-content active">
-  <div class="hero">
-    <h1>Welcome to Influency's Studio</h1>
-    <p>I’m currently developing my own game and creating powerful, easy-to-use assets for game developers. Whether you're an indie dev or part of a team, you'll find tools here that can supercharge your workflow and creativity.</p>
-  </div>
-</section>
-
-<section id="assets" class="tab-content">
-  <div class="gallery">
-    <div class="card">
-      <img src="images/custom-quest-tasks-x420.png" alt="Custom Quest Tasks">
-      <div class="card-content">
-        <h2 class="card-title">Custom Quest Tasks</h2>
-        <p class="card-description">Addon for MMORPG Kit that allows developers to create new, customized quest objectives and mechanics quickly and easily.</p>
-        <button class="doc-button" onclick="loadDoc('docs/custom-quest-tasks-doc.html')">📘 Documentation</button>
-      
-    <div class="card">
-      <img src="images/ui-tooltips-system-x420.png" alt="UI Tooltips System">
-      <div class="card-content">
-        <h2 class="card-title">UI Tooltips System</h2>
-        <p class="card-description">A clean and extensible system to show in-game tooltips using UI buttons, ScriptableObjects, and custom popup dialogs.</p>
-        <button class="doc-button" onclick="loadDoc('docs/ui-tooltips-system-doc.html')">📘 Documentation</button>
-      </div>
-    </div>
+<section class="tab-content active" id="home">
+<div class="hero">
+<h1>Welcome to Influency's Studio</h1>
+<p>I’m currently developing my own game and creating powerful, easy-to-use assets for game developers. Whether you're an indie dev or part of a team, you'll find tools here that can supercharge your workflow and creativity.</p>
 </div>
-    </div>
-
-    <div class="card">
-      <img src="images/animation-event-component-x420.png" alt="Animation Event Component">
-      <div class="card-content">
-        <h2 class="card-title">Animation Event Component</h2>
-        <p class="card-description">Addon for MMORPG Kit that allows animations to trigger specific gameplay events, enabling precise control over in-game interactions tied to animations.</p>
-        <button class="doc-button" onclick="loadDoc('docs/animation-event-component-doc.html')">📘 Documentation</button>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="images/language-manager-search-tool-x420.png" alt="Language Manager Search Tool">
-      <div class="card-content">
-        <h2 class="card-title">LanguageManagerSearchTool</h2>
-        <p class="card-description">A powerful in-editor search and management tool for multilingual content in the MMORPG Kit. Streamline localization and manage language entries with ease.</p>
-        <button class="doc-button" onclick="loadDoc('docs/language-manager-search-tool-doc.html')">📘 Documentation</button>
-      </div>
-    </div>
-  </div>
 </section>
-
-<section id="contact" class="tab-content">
-  <div style="text-align:center;">
-    <h2>Contact</h2>
-    <p>If you're interested in collaborating, purchasing an asset, or just have a question, feel free to reach out:</p>
-    <p><strong>Email:</strong> <a href="mailto:influency.studio@gmail.com">influency.studio@gmail.com</a></p>
-  </div>
+<section class="tab-content" id="assets">
+<div class="gallery">
+<div class="card">
+<img alt="Custom Quest Tasks" src="images/custom-quest-tasks-x420.png"/>
+<div class="card-content">
+<h2 class="card-title">Custom Quest Tasks</h2>
+<p class="card-description">Addon for MMORPG Kit that allows developers to create new, customized quest objectives and mechanics quickly and easily.</p>
+<button class="doc-button" onclick="loadDoc('docs/custom-quest-tasks-doc.html')">📘 Documentation</button>
+<div class="card">
+<img alt="UI Tooltips System" src="images/ui-tooltips-system-x420.png"/>
+<div class="card-content">
+<h2 class="card-title">UI Tooltips System</h2>
+<p class="card-description">A clean and extensible system to show in-game tooltips using UI buttons, ScriptableObjects, and custom popup dialogs.</p>
+<button class="doc-button" onclick="loadDoc('docs/ui-tooltips-system-doc.html')">📘 Documentation</button>
+</div>
+</div>
+</div>
+</div>
+<div class="card">
+<img alt="Animation Event Component" src="images/animation-event-component-x420.png"/>
+<div class="card-content">
+<h2 class="card-title">Animation Event Component</h2>
+<p class="card-description">Addon for MMORPG Kit that allows animations to trigger specific gameplay events, enabling precise control over in-game interactions tied to animations.</p>
+<button class="doc-button" onclick="loadDoc('docs/animation-event-component-doc.html')">📘 Documentation</button>
+</div>
+</div>
+<div class="card">
+<img alt="Language Manager Search Tool" src="images/language-manager-search-tool-x420.png"/>
+<div class="card-content">
+<h2 class="card-title">LanguageManagerSearchTool</h2>
+<p class="card-description">A powerful in-editor search and management tool for multilingual content in the MMORPG Kit. Streamline localization and manage language entries with ease.</p>
+<button class="doc-button" onclick="loadDoc('docs/language-manager-search-tool-doc.html')">📘 Documentation</button>
+</div>
+</div>
+</div>
 </section>
-
+<section class="tab-content" id="contact">
+<div style="text-align:center;">
+<h2>Contact</h2>
+<p>If you're interested in collaborating, purchasing an asset, or just have a question, feel free to reach out:</p>
+<p><strong>Email:</strong> <a href="mailto:influency.studio@gmail.com">influency.studio@gmail.com</a></p>
+</div>
+</section>
 <footer>
-  &copy; 2024 Influency's Studio - All rights reserved
+  © 2024 Influency's Studio - All rights reserved
 </footer>
-
 <!-- Reusable Modal -->
-<div id="doc-modal" class="modal">
-  <div class="modal-content">
-    <span class="modal-close" onclick="closeModal()">&times;</span>
-    <div id="doc-content"></div>
-  </div>
+<div class="modal" id="doc-modal">
+<div class="modal-content">
+<span class="modal-close" onclick="closeModal()">×</span>
+<div id="doc-content"></div>
 </div>
-
+</div>
 <script>
   function showTab(tabId, element) {
     const tabs = document.querySelectorAll('.tab-content');
@@ -238,6 +230,5 @@
     }
   }
 </script>
-
 </body>
 </html>
