@@ -5,27 +5,27 @@
 <p><strong>Step 1: Add the Component</strong></p>
 <ul>
   <li>Attach the <strong>AnimationEventComponent</strong> script to your character prefab.</li>
-  <li>Assign the character's <strong>Animator</strong> to the "Animator" field in the component.</li>
+  <li>Assign the character’s <strong>Animator</strong> to the <strong>Animator</strong> field in the component.</li>
 </ul>
 
 <p><strong>Step 2: Configure a Trigger</strong></p>
 <ul>
-  <li>In the <strong>Animation Triggers</strong> list, click the <code>+</code> button to add a new trigger.</li>
-  <li>Set the <strong>Trigger Name</strong> (e.g., <code>DEATH</code>, <code>STEP</code>, <code>ATTACK</code>).</li>
+  <li>In the <strong>Animation Triggers</strong> list, click the <strong>+</strong> button to add a new trigger.</li>
+  <li>Set the <strong>Trigger Name</strong> (e.g., <span style="text-transform: uppercase;">DEATH</span>, <span style="text-transform: uppercase;">STEP</span>, <span style="text-transform: uppercase;">ATTACK</span>).</li>
   <li>For each trigger, you can assign:</li>
   <ul>
-    <li>An <strong>Audio Clip</strong> or <strong>Addressable Audio Clip</strong></li>
-    <li>An <strong>Audio Source</strong></li>
-    <li>A <strong>Game Effect Prefab</strong> or <strong>Addressable Effect</strong></li>
-    <li>(Optional) a <strong>Transform Container</strong> to control where the effect spawns</li>
+    <li><strong>Audio Clip</strong> or <strong>Addressable Audio Clip</strong></li>
+    <li><strong>Audio Source</strong></li>
+    <li><strong>Game Effect Prefab</strong> or <strong>Addressable Effect</strong></li>
+    <li>(Optional) <strong>Transform Container</strong> to control where the effect spawns</li>
   </ul>
 </ul>
 
 <p><strong>Step 3: Add the Animation Event</strong></p>
 <ul>
-  <li>Open the desired animation clip in Unity's <strong>Animation</strong> window.</li>
+  <li>Open the desired animation clip in Unity’s <strong>Animation</strong> window.</li>
   <li>Right-click on the timeline and select <strong>Add Event</strong>.</li>
-  <li>Set the function name to <code>TriggerEvent</code>.</li>
+  <li>Set the function name to <strong>TriggerEvent</strong>.</li>
   <li>In the string field, enter the exact <strong>Trigger Name</strong> defined earlier.</li>
 </ul>
 
@@ -33,15 +33,15 @@
 <ul>
   <li><strong>Trigger names are case-sensitive</strong>. They must match exactly.</li>
   <li>You can define as many triggers as you need.</li>
-  <li>Use this system for events like <strong>footsteps</strong>, <strong>attacks</strong>, <strong>shouts</strong>, <strong>hits</strong>, <strong>magic</strong>, etc.</li>
+  <li>Use this system for events like <strong>FOOTSTEPS</strong>, <strong>ATTACKS</strong>, <strong>SHOUTS</strong>, <strong>HITS</strong>, <strong>MAGIC</strong>, etc.</li>
   <li><strong>This version does not support camera shake out of the box.</strong></li>
 </ul>
 
 <p><strong>Inspector Examples:</strong></p>
 <ol>
-  <li>AnimationEventComponent properly setup on a character</li>
-  <li>Unity animation timeline showing a TriggerEvent at a specific frame</li>
-  <li>Animation Event Inspector with <code>TriggerEvent</code> selected as the function</li>
+  <li><strong>AnimationEventComponent</strong> properly set up on a character</li>
+  <li>Unity animation timeline showing a <strong>TriggerEvent</strong> at a specific frame</li>
+  <li>Animation Event Inspector with <strong>TriggerEvent</strong> selected as the function</li>
 </ol>
 
 <p><strong>License & Usage:</strong> This system can be used in commercial projects. Redistribution of the addon on its own is not allowed.</p>
