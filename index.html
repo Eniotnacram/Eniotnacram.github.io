@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -80,8 +79,6 @@
       color: #333;
       cursor: pointer;
     }
-  
-
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -89,7 +86,6 @@
   justify-items: center;
   padding: 20px;
 }
-
 .card {
   background-color: white;
   width: 100%;
@@ -102,16 +98,13 @@
   display: flex;
   flex-direction: column;
 }
-
 .card:hover {
   transform: scale(1.05);
 }
-
 .card img {
   width: 100%;
   height: auto;
 }
-
 .card-content {
   padding: 15px;
   display: flex;
@@ -119,19 +112,16 @@
   justify-content: space-between;
   flex-grow: 1;
 }
-
 .card-title {
   font-size: 1.1em;
   margin-bottom: 8px;
   color: #333;
 }
-
 .card-description {
   font-size: 0.85em;
   color: #555;
   flex-grow: 1;
 }
-
 .doc-button {
   margin-top: 15px;
   padding: 10px;
@@ -143,7 +133,6 @@
   cursor: pointer;
   transition: background-color 0.3s;
 }
-
 .doc-button:hover {
   background-color: #218838;
 }
@@ -198,6 +187,14 @@
 <button class="doc-button" onclick="loadDoc('docs/ui-tooltips-system-doc.html')">📘 Documentation</button>
 </div>
 </div>
+<div class="card">
+<img alt="Skill Learning System" src="images/skill-learning-system-x420.png"/>
+<div class="card-content">
+<h2 class="card-title">Skill Learning System</h2>
+<p class="card-description">Addon for MMORPG Kit that enables real-time, UI-triggered skill progression with configurable wait times and full server-side control.</p>
+<button class="doc-button" onclick="loadDoc('docs/learning-skill-system-doc.html')">📘 Documentation</button>
+</div>
+</div>
 </div>
 </section>
 <section class="tab-content" id="contact">
@@ -210,7 +207,6 @@
 <footer>
   © 2024 Influency's Studio - All rights reserved
 </footer>
-<!-- Reusable Modal -->
 <div class="modal" id="doc-modal">
 <div class="modal-content">
 <span class="modal-close" onclick="closeModal()">×</span>

@@ -1,0 +1,91 @@
+<h2>📘 <strong>Skill Learning System - Documentation</strong></h2>
+
+<p><strong>Overview:</strong><br>
+This addon enhances the MMORPG KIT by allowing skills to be learned over time rather than instantly. Players trigger learning manually via the UI, and skills level up after a server-defined wait period.</p>
+
+<hr>
+
+<h3>🧩 <strong>Setup Instructions</strong></h3>
+
+<h4>1. Database Setup</h4>
+<p><strong>If using MySQL:</strong></p>
+<ol>
+  <li>Open your MySQL database manager (e.g., phpMyAdmin).</li>
+  <li>Import the file: <code>mysql_learningskill.sql</code></li>
+  <li>This will create a table named <code>characterlearningskill</code> required for tracking learning progress.</li>
+</ol>
+<p><strong>If using SQLite:</strong> No setup is needed. The table will be created automatically at runtime by the system.</p>
+
+<h4>2. Player Prefab Setup</h4>
+<ol>
+  <li>Open your <strong>Player Prefab</strong> in Unity.</li>
+  <li>Add the component <strong>PlayerCharacterLearningSkillComponent</strong>.</li>
+  <li>This script manages learning logic and checks timers periodically.</li>
+</ol>
+
+<h4>3. Add Skill Learning Time</h4>
+<ol>
+  <li>Go to a <strong>Skill ScriptableObject</strong> (e.g., Fireball, Heal).</li>
+  <li>In the <strong>Learning Settings</strong> section, set the <code>learningDuration</code> in seconds.</li>
+  <li>If you set <code>learningDuration = 0</code>, the skill will be learned instantly.</li>
+</ol>
+
+<hr>
+
+<h3>🖱️ <strong>UI Integration</strong></h3>
+
+<h4>4. Add Skill Learn Button Event</h4>
+<ol>
+  <li>Locate your UI prefab or scene with the <strong>Skill List UI</strong>.</li>
+  <li>Find the button the player presses to learn a skill.</li>
+  <li>In the button's <strong>OnClick</strong> event list:</li>
+  <ul>
+    <li>Drag the GameObject containing the <code>UICharacterSkill</code> component into the event target.</li>
+    <li>Choose the method: <code>UICharacterSkill → OnClickAddLearningSkill()</code></li>
+  </ul>
+  <li>This will trigger a request to the server to begin the learning process.</li>
+</ol>
+
+<h4>5. Optional UI Feedback</h4>
+<p>You can visually show remaining time and a progress bar:</p>
+<ul>
+  <li>In the <code>UICharacterSkill</code> component:</li>
+  <ul>
+    <li>Assign a <strong>UITimer</strong> component to <code>uiTimerLearningSkillRemainingTime</code>.</li>
+    <li>Assign an <strong>Image</strong> to <code>imageLearningSkillGauge</code> for the fill animation.</li>
+  </ul>
+  <li>These will automatically update based on skill progress.</li>
+</ul>
+
+<hr>
+
+<h3>⚙️ <strong>Behind the Scenes</strong></h3>
+
+<ul>
+  <li>The server checks learning progress every <strong>5 seconds</strong> via <code>PlayerCharacterLearningSkillComponent</code>.</li>
+  <li>If the configured time has passed, the skill level is increased automatically.</li>
+  <li>Each skill can only be learned once at a time per character.</li>
+</ul>
+
+<hr>
+
+<h3>🧪 <strong>Testing & Troubleshooting</strong></h3>
+
+<ul>
+  <li>If skill doesn't level up: verify the timer, database setup, and prefab component.</li>
+  <li>Make sure the skill has a valid duration (non-negative).</li>
+  <li>Ensure the player has required skill points and currency as configured.</li>
+</ul>
+
+<hr>
+
+<h3>📎 <strong>Dependencies</strong></h3>
+<ul>
+  <li>MMORPG KIT (2D/3D/Survival)</li>
+  <li>Database (MySQL or SQLite)</li>
+</ul>
+
+<hr>
+
+<h3>📜 <strong>License</strong></h3>
+<p>You may use this addon in commercial projects. Redistribution of the addon by itself is not allowed.</p>
